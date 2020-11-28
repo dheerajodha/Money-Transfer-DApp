@@ -11,7 +11,7 @@ contract Bank {
  
  constructor() public {
     /* Creates an initial transaction from a dummy address to the address of account which deployed this contract. */
-    address dummyAddress = "0x87346874638747834683";
+    address dummyAddress = address(0x87346874638747834683);
     Transaction memory transaction = Transaction(dummyAddress, msg.sender, 50);
     transactions.push(transaction);
  }
