@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.5.12;
 
 contract Bank {
     struct Transaction {
@@ -11,7 +11,7 @@ contract Bank {
  
  constructor() public {
     /* Creates an initial transaction from a dummy address to the address of account which deployed this contract. */
-    address dummyAddress = 0x87346874638747834683;
+    address dummyAddress = "0x87346874638747834683";
     Transaction memory transaction = Transaction(dummyAddress, msg.sender, 50);
     transactions.push(transaction);
  }
@@ -42,7 +42,7 @@ function transferMoney(address _fromAddress, address _toAddress, uint _withdrawA
     return balanceIn - balanceOut;
  }
  
- function() public {
+ function() external {
     revert();
  }
 }
